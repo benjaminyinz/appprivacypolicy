@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>得闲 · 隐私政策与用户须知</title>
+<style>
+  :root {
+    --brand: #D4873A;
+    --brand-light: #FDF3E7;
+    --text: #1a1a1a;
+    --text-sec: #555;
+    --text-hint: #999;
+    --border: #e8e2d8;
+    --bg: #FAFAF8;
+    --white: #ffffff;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: -apple-system, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    font-size: 15px;
+    line-height: 1.8;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Header */
+  .header {
+    background: var(--white);
+    border-bottom: 1px solid var(--border);
+    padding: 20px 24px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .logo {
+    width: 36px; height: 36px;
+    background: var(--brand);
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 16px; color: white; font-weight: 600;
+    flex-shrink: 0;
+  }
+  .header-text h1 {
+    font-size: 15px; font-weight: 600; color: var(--text);
+  }
+  .header-text p {
+    font-size: 12px; color: var(--text-hint);
+  }
+
+  /* Hero */
+  .hero {
+    background: linear-gradient(135deg, var(--brand-light) 0%, #fff8f0 100%);
+    padding: 40px 24px 32px;
+    border-bottom: 1px solid var(--border);
+  }
+  .hero-tag {
+    display: inline-block;
+    background: var(--brand);
+    color: white;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    padding: 4px 10px;
+    border-radius: 20px;
+    margin-bottom: 12px;
+  }
+  .hero h2 {
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--text);
+    line-height: 1.3;
+    margin-bottom: 10px;
+  }
+  .hero p {
+    font-size: 14px;
+    color: var(--text-sec);
+    line-height: 1.7;
+  }
+  .hero-meta {
+    margin-top: 20px;
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .meta-chip {
+    font-size: 12px;
+    color: var(--text-hint);
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+  .meta-chip::before {
+    content: '';
+    width: 5px; height: 5px;
+    border-radius: 50%;
+    background: var(--brand);
+    display: inline-block;
+  }
+
+  /* TOC */
+  .toc {
+    background: var(--white);
+    margin: 20px 16px;
+    border-radius: 14px;
+    border: 1px solid var(--border);
+    overflow: hidden;
+  }
+  .toc-header {
+    padding: 14px 18px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-hint);
+    letter-spacing: 0.5px;
+    border-bottom: 1px solid var(--border);
+    background: var(--bg);
+  }
+  .toc a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 18px;
+    font-size: 14px;
+    color: var(--text);
+    text-decoration: none;
+    border-bottom: 1px solid var(--border);
+    transition: background 0.15s;
+  }
+  .toc a:last-child { border-bottom: none; }
+  .toc a:active { background: var(--brand-light); }
+  .toc-arrow { color: var(--text-hint); font-size: 12px; }
+
+  /* Content */
+  .content {
+    padding: 0 16px 60px;
+  }
+
+  /* Section */
+  .section {
+    background: var(--white);
+    border-radius: 14px;
+    border: 1px solid var(--border);
+    overflow: hidden;
+    margin-top: 20px;
+  }
+  .section-header {
+    padding: 18px 20px 14px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  .section-num {
+    width: 28px; height: 28px;
+    border-radius: 8px;
+    background: var(--brand-light);
+    color: var(--brand);
+    font-size: 13px;
+    font-weight: 700;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+  .section-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text);
+    line-height: 1.4;
+  }
+  .section-sub {
+    font-size: 12px;
+    color: var(--text-hint);
+    margin-top: 2px;
+  }
+  .section-body {
+    padding: 18px 20px;
+  }
+  .section-body p {
+    font-size: 14px;
+    color: var(--text-sec);
+    line-height: 1.8;
+    margin-bottom: 12px;
+  }
+  .section-body p:last-child { margin-bottom: 0; }
+
+  /* Sub-section */
+  .sub-section {
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid var(--border);
+  }
+  .sub-section:first-child { margin-top: 0; padding-top: 0; border-top: none; }
+  .sub-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .sub-title::before {
+    content: '';
+    width: 3px; height: 14px;
+    background: var(--brand);
+    border-radius: 2px;
+    display: inline-block;
+  }
+
+  /* List */
+  .list {
+    list-style: none;
+    margin-top: 8px;
+  }
+  .list li {
+    font-size: 14px;
+    color: var(--text-sec);
+    line-height: 1.7;
+    padding: 6px 0 6px 18px;
+    position: relative;
+    border-bottom: 1px solid var(--border);
+  }
+  .list li:last-child { border-bottom: none; }
+  .list li::before {
+    content: '·';
+    position: absolute;
+    left: 4px;
+    color: var(--brand);
+    font-size: 18px;
+    line-height: 1.5;
+  }
+
+  /* Warning card */
+  .warn-card {
+    background: #fff9f0;
+    border: 1px solid #f5d9b0;
+    border-radius: 10px;
+    padding: 14px 16px;
+    margin: 14px 0;
+    font-size: 13px;
+    color: #8a5a20;
+    line-height: 1.7;
+  }
+  .warn-card strong { color: #c47820; }
+
+  /* Info card */
+  .info-card {
+    background: #f0f6ff;
+    border: 1px solid #c8ddf8;
+    border-radius: 10px;
+    padding: 14px 16px;
+    margin: 14px 0;
+    font-size: 13px;
+    color: #2a5080;
+    line-height: 1.7;
+  }
+
+  /* Highlight tag */
+  .tag {
+    display: inline-block;
+    background: var(--brand-light);
+    color: var(--brand);
+    font-size: 11px;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-right: 4px;
+  }
+  .tag-blue {
+    background: #eef4ff;
+    color: #3a6abf;
+  }
+
+  /* Part divider */
+  .part-divider {
+    margin: 28px 0 0;
+    padding: 16px 20px;
+    background: linear-gradient(135deg, var(--brand-light), #fff);
+    border-radius: 14px 14px 0 0;
+    border: 1px solid var(--border);
+    border-bottom: none;
+  }
+  .part-divider h3 {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--text);
+  }
+  .part-divider p {
+    font-size: 13px;
+    color: var(--text-hint);
+    margin-top: 4px;
+  }
+
+  /* Privacy data table */
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+    margin-top: 12px;
+  }
+  .data-table th {
+    background: var(--bg);
+    padding: 8px 12px;
+    text-align: left;
+    font-weight: 600;
+    color: var(--text-hint);
+    font-size: 12px;
+    border-bottom: 1px solid var(--border);
+  }
+  .data-table td {
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--border);
+    color: var(--text-sec);
+    vertical-align: top;
+  }
+  .data-table tr:last-child td { border-bottom: none; }
+
+  /* Footer */
+  .footer {
+    background: var(--white);
+    border-top: 1px solid var(--border);
+    padding: 24px;
+    margin-top: 32px;
+    text-align: center;
+  }
+  .footer p {
+    font-size: 12px;
+    color: var(--text-hint);
+    line-height: 1.8;
+  }
+  .footer a {
+    color: var(--brand);
+    text-decoration: none;
+  }
+  .footer .company {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-sec);
+    margin-bottom: 6px;
+  }
+
+  /* Anchor offset for sticky header */
+  [id] { scroll-margin-top: 70px; }
+
+  @media (min-width: 600px) {
+    .hero, .content, .toc { max-width: 680px; margin-left: auto; margin-right: auto; }
+    .toc { margin: 20px auto; }
+    .hero { padding: 48px 40px 36px; }
+    .content { padding: 0 0 80px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<div class="header">
+  <div class="logo">闲</div>
+  <div class="header-text">
+    <h1>得闲</h1>
+    <p>用户须知与隐私政策</p>
+  </div>
+</div>
+
+<!-- Hero -->
+<div class="hero">
+  <div class="hero-tag">法律文件</div>
+  <h2>用户须知<br>与隐私政策</h2>
+  <p>本文件包含得闲平台服务协议、活动规则、免责声明及个人信息保护政策，请在使用前仔细阅读。</p>
+  <div class="hero-meta">
+    <span class="meta-chip">版本 1.0</span>
+    <span class="meta-chip">生效日期：2026年7月1日</span>
+    <span class="meta-chip">适用地区：全球</span>
+  </div>
+</div>
+
+<!-- TOC -->
+<div class="toc">
+  <div class="toc-header">目录</div>
+  <a href="#part1"><span>第一部分：服务协议与活动规则</span><span class="toc-arrow">›</span></a>
+  <a href="#s1"><span>1. 平台定位与角色</span><span class="toc-arrow">›</span></a>
+  <a href="#s2"><span>2. 活动类型与费用</span><span class="toc-arrow">›</span></a>
+  <a href="#s3"><span>3. 用户责任与风险</span><span class="toc-arrow">›</span></a>
+  <a href="#s4"><span>4. 报名、取消与守约</span><span class="toc-arrow">›</span></a>
+  <a href="#s5"><span>5. 线下安全提醒</span><span class="toc-arrow">›</span></a>
+  <a href="#s6"><span>6. 平台内容管理</span><span class="toc-arrow">›</span></a>
+  <a href="#part2"><span>第二部分：隐私政策</span><span class="toc-arrow">›</span></a>
+  <a href="#p1"><span>1. 我们收集的信息</span><span class="toc-arrow">›</span></a>
+  <a href="#p2"><span>2. 信息使用方式</span><span class="toc-arrow">›</span></a>
+  <a href="#p3"><span>3. 信息共享与披露</span><span class="toc-arrow">›</span></a>
+  <a href="#p4"><span>4. 数据存储与安全</span><span class="toc-arrow">›</span></a>
+  <a href="#p5"><span>5. 您的权利与注销</span><span class="toc-arrow">›</span></a>
+  <a href="#contact"><span>联系我们</span><span class="toc-arrow">›</span></a>
+</div>
+
+<!-- Content -->
+<div class="content">
+
+  <!-- PART 1 -->
+  <div class="part-divider" id="part1">
+    <h3>第一部分</h3>
+    <p>服务协议、活动规则与免责声明</p>
+  </div>
+
+  <!-- 重要提示 -->
+  <div class="section" style="border-radius: 0 0 14px 14px;">
+    <div class="section-body">
+      <div class="warn-card">
+        <strong>重要提示：</strong>欢迎您使用"得闲"平台。请您在注册、浏览、发布或参与活动前仔细阅读本协议。如您继续使用得闲平台，即表示您已阅读、理解并同意本协议全部内容。<br><br>
+        本协议不排除、限制或修改您依法享有且不能被排除的权利，也不排除得闲因重大过失、违法行为、误导或欺骗行为，或适用法律下不可排除的消费者保障而应承担的法定责任。
+      </div>
+    </div>
+  </div>
+
+  <!-- S1 -->
+  <div class="section" id="s1">
+    <div class="section-header">
+      <div class="section-num">1</div>
+      <div>
+        <div class="section-title">平台定位与角色</div>
+        <div class="section-sub">得闲是什么，不是什么</div>
+      </div>
+    </div>
+    <div class="section-body">
+      <p>得闲是一个面向本地生活、轻社交和线下活动的技术服务平台，为用户提供发布、浏览、报名和参与线下活动的信息展示及工具支持，包括但不限于活动展示、报名管理、群聊、通知提醒、签到记录、守约率记录、举报反馈及社区规则管理。</p>
+      <div class="info-card">
+        除非活动页面明确标注为<strong>「得闲官方活动」「商家合作活动」</strong>或<strong>「团购 / 票券项目」</strong>，普通活动均由用户自行发起、组织和参与。
+      </div>
+      <p>对于普通用户自行发起的活动，得闲<strong>不是</strong>活动的组织者、承办方、代理人、雇主、合伙人、赞助商、担保人或现场管理方。得闲不对普通活动的实际举办、参与人数、现场体验、参与者行为、第三方场地服务或活动结果作出保证。</p>
+    </div>
+  </div>
+
+  <!-- S2 -->
+  <div class="section" id="s2">
+    <div class="section-header">
+      <div class="section-num">2</div>
+      <div>
+        <div class="section-title">活动类型与费用说明</div>
+        <div class="section-sub">普通活动 · 团购票券 · 商家合作</div>
+      </div>
+    </div>
+    <div class="section-body">
+      <div class="sub-section">
+        <div class="sub-title">普通活动支持形式</div>
+        <ul class="list">
+          <li>免费活动</li>
+          <li>AA 活动（费用由参与者现场自行协商结算）</li>
+          <li>线下自付活动（餐饮、交通、场地等线下自付）</li>
+        </ul>
+      </div>
+      <div class="sub-section">
+        <div class="sub-title">费用须知</div>
+        <p>得闲目前不支持普通用户以个人名义发起平台内付费活动。得闲不代收普通活动费用，不参与线下 AA 分账，也不对用户之间的私下付款、转账、押金、预付款或其他金钱往来承担责任。</p>
+        <div class="warn-card">
+          <strong>⚠️ 警告：</strong>用户不得以普通活动名义要求其他用户提前私下转账、支付押金、预付款或其他费用。若您发现此类行为，请谨慎参与，并及时通过平台举报。
+        </div>
+        <div class="warn-card">
+          <strong>重要声明：</strong>本平台应用内不处理或代收线下活动的直接现金交易。所有线下消费（餐饮、交通、场地、门票等）均由参与者与现场商家或其他参与者自行协商结算，与得闲平台无关。
+        </div>
+      </div>
+      <div class="sub-section">
+        <div class="sub-title">团购、商家票券与官方合作</div>
+        <p>如页面明确标注为「团购」「商家票券」「商家合作」或「得闲官方活动」，相关服务的价格、核销方式、退款规则、售后处理及责任范围，以对应页面展示的具体规则为准。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- S3 -->
+  <div class="section" id="s3">
+    <div class="section-header">
+      <div class="section-num">3</div>
+      <div>
+        <div class="section-title">用户责任与风险承担</div>
+        <div class="section-sub">参与前请自行判断</div>
+      </div>
+    </div>
+    <div class="section-body">
+      <p>用户在报名和参与任何普通活动前，应自行判断活动内容、地点、时间、参与人员、交通方式、身体状况及其他相关因素是否适合自己。</p>
+      <div class="sub-section">
+        <div class="sub-title">线下活动可能存在的风险包括</div>
+        <ul class="list">
+          <li>交通风险、天气变化</li>
+          <li>运动损伤、物品遗失</li>
+          <li>个人纠纷、第三方场地或商家服务质量差异</li>
+          <li>活动临时变更、参与者迟到或缺席等</li>
+        </ul>
+      </div>
+      <p>用户应对自己的出行安排、人身安全、个人财物、线下消费、个人言行及与其他用户的互动自行负责。</p>
+    </div>
+  </div>
+
+  <!-- S4 -->
+  <div class="section" id="s4">
+    <div class="section-header">
+      <div class="section-num">4</div>
+      <div>
+        <div class="section-title">报名、取消与守约规则</div>
+        <div class="section-sub">守约率影响平台权限</div>
+      </div>
+    </div>
+    <div class="section-body">
+      <p>用户报名活动后，应尽量按照活动页面显示的时间、地点和要求准时参加。如用户临时无法参加，应尽早在平台内取消报名，以便其他用户加入活动。</p>
+      <div class="info-card">
+        临时取消、频繁取消、无故未到、恶意占用名额、活动中严重不配合或被多次投诉，可能影响用户的<strong>守约率、闲仔状态、活动参与权限及活动发起权限</strong>。
+      </div>
+      <p>守约率、完成局数、生活浓度等记录用于帮助用户判断活动参与质量和社区可信度，但不构成平台对任何用户品行、身份、信用或线下行为的保证。</p>
+    </div>
+  </div>
+
+  <!-- S5 -->
+  <div class="section" id="s5">
+    <div class="section-header">
+      <div class="section-num">5</div>
+      <div>
+        <div class="section-title">线下安全提醒</div>
+        <div class="section-sub">请保护好自己</div>
+      </div>
+    </div>
+    <div class="section-body">
+      <ul class="list">
+        <li>初次见面优先选择人流量较大的公共场所</li>
+        <li>报名前仔细查看活动内容、地点、时间、发起人信息及参与人数</li>
+        <li>不要向陌生人提前私下转账、支付押金或预付款</li>
+        <li>不要轻易透露住址、证件信息、银行卡信息、验证码或其他敏感个人信息</li>
+        <li>如参加夜间、户外、运动、酒精相关或陌生环境活动，请根据自身情况谨慎判断</li>
+        <li>可以提前将行程时间、地点和同行人告知亲友</li>
+        <li>如遇骚扰、威胁、危险或违规收费，请立即离开现场，并通过平台举报或寻求当地紧急帮助</li>
+      </ul>
+      <div class="warn-card">
+        <strong>紧急情况下，请优先联系当地紧急服务，而不是等待平台处理。</strong>
+      </div>
+    </div>
+  </div>
+
+  <!-- S6 -->
+  <div class="section" id="s6">
+    <div class="section-header">
+      <div class="section-num">6</div>
+      <div>
+        <div class="section-title">平台内容管理与不可抗力</div>
+        <div class="section-sub">社区规则 · 法律适用</div>
+      </div>
+    </div>
+    <div class="section-body">
+      <p>得闲可对用户发布的活动、个人资料、评论、聊天内容、图片及其他平台内容进行必要的审核、管理或处理。如平台认为相关内容或行为可能违反法律法规、平台规则、公共安全或他人合法权益，得闲有权采取措施，包括要求修改内容、限制功能或暂停账号。</p>
+      <div class="info-card">平台提供 <strong>24 小时内响应</strong>的举报处理机制，用户可通过 App 内功能随时投诉违规内容。如对平台处理结果有异议，可发送邮件至 <a href="mailto:contact.dexian@gmail.com" style="color:#2a5080;">contact.dexian@gmail.com</a> 提出申诉，我们将在 <strong>3 个工作日内</strong>回复。</div>
+      <div class="sub-section">
+        <div class="sub-title">不可抗力</div>
+        <p>因自然灾害、恶劣天气、交通中断、公共事件、政府行为、第三方服务故障、通讯网络故障或其他不可抗力因素导致服务中断的，得闲将在合理范围内尽力协助，但不对超出法律规定范围的损失承担责任。</p>
+      </div>
+      <div class="sub-section">
+        <div class="sub-title">适用法律与争议解决</div>
+        <p>本协议受香港特别行政区法律管辖。因本协议引起的任何争议，双方应首先通过友好协商解决；协商不成的，提交香港法院管辖。</p>
+      </div>
+      <div class="sub-section">
+        <div class="sub-title">法律不可排除权</div>
+        <p>本协议中的任何内容均不排除、限制或修改用户依据适用法律享有且不能被排除、限制或修改的权利。如本协议任何条款与强制性规定不一致，以相关法律规定为准；其余条款仍继续有效。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- PART 2 -->
+  <div class="part-divider" id="part2" style="margin-top: 36px;">
+    <h3>第二部分</h3>
+    <p>隐私政策与个人信息保护</p>
+  </div>
+
+  <div class="section" style="border-radius: 0 0 14px 14px;">
+    <div class="section-body">
+      <p style="font-size:13px; color: var(--text-hint);">我们非常重视您的隐私。本政策向您阐明我们如何收集、使用、存储和保护您的个人信息，以及您对个人信息享有的权利。</p>
+    </div>
+  </div>
+
+  <!-- P1 -->
+  <div class="section" id="p1">
+    <div class="section-header">
+      <div class="section-num">1</div>
+      <div>
+        <div class="section-title">我们收集的信息</div>
+        <div class="section-sub">您提供的 · 自动收集的 · 位置信息</div>
+      </div>
+    </div>
+    <div class="section-body">
+      <table class="data-table">
+        <tr>
+          <th>类别</th>
+          <th>具体内容</th>
+          <th>用途</th>
+        </tr>
+        <tr>
+          <td><span class="tag">主动提供</span></td>
+          <td>手机号 / 邮箱、用户名、密码；头像、性别、生日、MBTI、兴趣爱好；活动内容、群聊消息、打卡记录</td>
+          <td>账户管理、社区功能</td>
+        </tr>
+        <tr>
+          <td><span class="tag tag-blue">自动收集</span></td>
+          <td>应用交互记录、设备类型、操作系统版本、唯一设备标识符、IP 地址</td>
+          <td>安全保障、服务优化</td>
+        </tr>
+        <tr>
+          <td><span class="tag">位置信息</span></td>
+          <td>精确或模糊地理位置（经您明确授权后收集）</td>
+          <td>推荐附近活动</td>
+        </tr>
+      </table>
+      <div class="info-card" style="margin-top:14px;">
+        您可随时在系统设置中关闭位置、摄像头和推送通知权限。关闭后，相关功能将受到限制，但不影响其他基本服务的使用。
+      </div>
+    </div>
+  </div>
+
+  <!-- P2 -->
+  <div class="section" id="p2">
+    <div class="section-header">
+      <div class="section-num">2</div>
+      <div>
+        <div class="section-title">我们如何使用您的信息</div>
+      </div>
+    </div>
+    <div class="section-body">
+      <ul class="list">
+        <li><strong>提供核心功能：</strong>账户管理、活动创建、即时通讯群聊及活动通知</li>
+        <li><strong>优化社交匹配：</strong>基于您的社交偏好、兴趣和位置，提升用户间的匹配度</li>
+        <li><strong>MIO 虚拟伙伴：</strong>驱动您的 MIO 虚拟伙伴进行穿搭、天气、路线提醒等趣味互动</li>
+        <li><strong>安全保障：</strong>反作弊、防欺诈，以及维护平台网络安全</li>
+        <li><strong>改善服务：</strong>分析用户行为数据，优化产品体验</li>
+      </ul>
+      <p style="margin-top:12px; font-size:13px; color:var(--text-hint);">我们不会将您的个人信息用于本政策未载明的其他目的。如需变更使用目的，我们将提前通知并征得您的同意。</p>
+    </div>
+  </div>
+
+  <!-- P3 -->
+  <div class="section" id="p3">
+    <div class="section-header">
+      <div class="section-num">3</div>
+      <div>
+        <div class="section-title">信息共享与披露</div>
+        <div class="section-sub">我们绝不出售您的隐私</div>
+      </div>
+    </div>
+    <div class="section-body">
+      <div class="sub-section">
+        <div class="sub-title">平台内公开展示</div>
+        <p>您的个人主页和活动记录将在平台内对其他用户公开展示（您可在设置中调整可见范围）。</p>
+      </div>
+      <div class="sub-section">
+        <div class="sub-title">必要的第三方技术服务商</div>
+        <p>为支持平台稳定运行，我们与以下类型的服务商共享必要技术数据：</p>
+        <ul class="list">
+          <li>云数据库服务（MongoDB Atlas）</li>
+          <li>短信及推送通知服务商</li>
+          <li>Expo 应用开发框架</li>
+        </ul>
+        <p style="margin-top: 8px; font-size:13px; color:var(--text-hint);">上述服务商收集和处理信息遵守其自身的隐私条款。</p>
+      </div>
+      <div class="sub-section">
+        <div class="sub-title">法律要求</div>
+        <p>根据法律法规、法律程序或政府主管部门的强制性要求，我们可能进行必要的信息披露。</p>
+      </div>
+      <div class="warn-card">
+        <strong>我们承诺：</strong>绝不向第三方出售您的个人信息，也不以任何商业目的将您的信息提供给广告商。
+      </div>
+    </div>
+  </div>
+
+  <!-- P4 -->
+  <div class="section" id="p4">
+    <div class="section-header">
+      <div class="section-num">4</div>
+      <div>
+        <div class="section-title">数据存储与安全</div>
+        <div class="section-sub">我们如何保护您的数据</div>
+      </div>
+    </div>
+    <div class="section-body">
+      <ul class="list">
+        <li><strong>密码加密：</strong>采用 bcrypt 等算法进行哈希加密存储，任何人（包括我们）均无法查看您的密码明文</li>
+        <li><strong>传输加密：</strong>所有数据传输均通过 HTTPS 加密通道</li>
+        <li><strong>身份验证：</strong>使用 JWT 令牌进行严格的身份验证</li>
+        <li><strong>跨境存储：</strong>由于使用全球云服务，您的数据可能在您居住国以外的服务器存储，我们将确保采取同等安全防护</li>
+      </ul>
+      <div class="sub-section">
+        <div class="sub-title">数据保留期限</div>
+        <p>您的账户数据在账户存续期间保留。账户注销后，身份信息将在 <strong>30 天内</strong>彻底删除或匿名化处理。基于法律合规或防欺诈审计需要，部分活动交易和投诉记录将在法定最短期限（通常不超过 <strong>3 年</strong>）内留存，到期后自动删除。</p>
+      </div>
+      <div class="sub-section">
+        <div class="sub-title">跨 App 追踪声明</div>
+        <p>得闲不会追踪您在其他公司的 App 或网站中的活动，也不会将您的数据出售给数据经纪商。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- P5 -->
+  <div class="section" id="p5">
+    <div class="section-header">
+      <div class="section-num">5</div>
+      <div>
+        <div class="section-title">您的权利与账户注销</div>
+        <div class="section-sub">您对自己的数据拥有完整控制权</div>
+      </div>
+    </div>
+    <div class="section-body">
+      <div class="sub-section">
+        <div class="sub-title">您可以随时</div>
+        <ul class="list">
+          <li>在「设置」中更正或更新个人资料</li>
+          <li>在系统设置中关闭位置、摄像头和推送通知权限</li>
+          <li>申请导出您的个人数据副本</li>
+          <li>通过 <a href="mailto:info@euphonichorizon.com" style="color:var(--brand);">info@euphonichorizon.com</a> 提交隐私相关请求</li>
+        </ul>
+      </div>
+      <div class="sub-section">
+        <div class="sub-title">账户注销</div>
+        <div class="info-card">
+          注销路径：<strong>设置 → 账户安全 → 注销账户</strong><br>
+          注销后，您的身份信息将在 30 天内从系统中彻底删除或匿名化。
+        </div>
+      </div>
+      <div class="sub-section">
+        <div class="sub-title">未成年人保护</div>
+        <p>本平台不面向未满 <strong>17 周岁</strong>的未成年人（部分地区适用更高年龄限制）。如发现误收集未成年人信息，我们将立即予以删除。</p>
+      </div>
+      <div class="sub-section">
+        <div class="sub-title">政策更新通知</div>
+        <p>若本隐私政策发生重大变更，我们将通过 App 内通知或注册邮箱提前 <strong>7 天</strong>告知您。继续使用平台即视为接受更新后的政策。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Contact -->
+  <div class="section" id="contact">
+    <div class="section-header">
+      <div class="section-num" style="background:#f0f6ff; color:#3a6abf;">@</div>
+      <div>
+        <div class="section-title">联系我们</div>
+        <div class="section-sub">隐私问题 · 投诉举报 · 数据请求</div>
+      </div>
+    </div>
+    <div class="section-body">
+      <ul class="list">
+        <li><strong>客服支持：</strong>contact.dexian@gmail.com</li>
+        <li><strong>公司联系：</strong>info@euphonichorizon.com</li>
+        <li><strong>公司名称：</strong>Euphonic Horizon Media Co., Limited</li>
+        <li><strong>注册地址：</strong>Rm A5 7/F Astoria Bldg, 34 Ashley Rd, Tsim Sha Tsui, Hong Kong</li>
+      </ul>
+      <p style="margin-top:14px; font-size:13px; color:var(--text-hint);">我们将在收到您的请求后 <strong>15 个工作日内</strong>回复。</p>
+    </div>
+  </div>
+
+</div><!-- /content -->
+
+<!-- Footer -->
+<div class="footer">
+  <div class="company">Euphonic Horizon Media Co., Limited</div>
+  <p>
+    © 2026 得闲 · 版本 1.0<br>
+    生效日期：2026年7月1日<br>
+    本文件受香港特别行政区法律保护
+  </p>
+</div>
+
+</body>
+</html>
